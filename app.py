@@ -9,11 +9,15 @@ import pandas as pd
 
 import plotly.graph_objects as go
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__)
 
 server = app.server
+
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
+# app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+#
+# server = app.server
 
 styles = {
     'pre': {
@@ -91,7 +95,7 @@ app.layout = html.Div([
 
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=5000)
+  server.run(host='0.0.0.0', port=5000)
 
 #
 # if __name__ == '__main__':
